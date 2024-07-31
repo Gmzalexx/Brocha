@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:Brocha"
+             x:Class="Brocha.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewModel:brochamvvm/>
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="10">
+        <Entry Placeholder="Área en m²" Text="{Binding Area}" Keyboard="Numeric" />
+        <Entry Placeholder="Precio por m²" Text="{Binding PrecioPorM2}" Keyboard="Numeric" />
+        <Button Text="Calcular Costo" Command="{Binding CalcularCosto}" />
+        <Label Text="Costo Total:" />
+        <Label Text="{Binding CostoTotal}" />
+    </StackLayout>
+</ContentPage>
